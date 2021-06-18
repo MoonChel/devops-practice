@@ -6,6 +6,14 @@ terraform {
     }
   }
 
+  backend "remote" {
+    organization = "moonchel-devops"
+
+    workspaces {
+      name = "devops-practice"
+    }
+  }
+  
   required_version = "~> 0.15.5"
 }
 
