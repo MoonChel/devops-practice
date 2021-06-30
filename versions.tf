@@ -6,12 +6,9 @@ terraform {
     }
   }
 
-  backend "remote" {
-    organization = "moonchel-devops"
-
-    workspaces {
-      name = "devops-practice"
-    }
+  backend "gcs" {
+    bucket  = "moonchel-terraform-state"
+    prefix  = "prod"
   }
   
   required_version = "~> 0.15.5"
